@@ -11,12 +11,14 @@ import (
 var DB *gorm.DB
 var err error
  
+// Book represents a book in the database.
 type Book struct {
    gorm.Model
-   Title  string `json:"title"`
-   Author string `json:"author"`
+   Title  string `json:"title" example:"One Piece"`
+   Author string `json:"author" example:"Oda"`
 }
  
+// DatabaseConnection establishes a connection to the database.
 func DatabaseConnection() {
    host := "localhost"
    port := "5432"
